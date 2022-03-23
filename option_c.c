@@ -8,18 +8,16 @@
 
 int option_c(const char *format, va_list args)
 {
+	char ch = va_arg(args, int);
 	int retu = _putchar(ch);
 
-	switch (*format)
+	if (*format == 'c')
 	{
-		case 'c':
-		{
-			char ch = va_arg(args, int);
+		_putchar(ch);
+		return (retu);
 
-			retu = _putchar(ch);
-			return (ch);
+		break;
 
-			break;
-		}
 	}
+	return (0);
 }

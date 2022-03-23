@@ -8,22 +8,11 @@
 
 int option_s(const char *format, va_list args)
 {
-	int retu;
-
-	switch (*format)
+	if (*format == 's')
 	{
-		case 's':
-		{
-			const char *str = va_arg(args, const char *);
-			{
-				while (*str)
-				{
-					retu = _putchar(str);
-					return (str);
-
-					break;
-				}
-			}
-		}
+		const char *s = va_arg(args, const char *);
+		while (*s)
+			_putchar(str);
+		break;
 	}
 }

@@ -8,7 +8,6 @@
 int ini_printf(const char *format, va_list args)
 {
 	int state = 0;
-	int retu;
 
 	while (*format)
 	{
@@ -18,11 +17,11 @@ int ini_printf(const char *format, va_list args)
 				state = 1;
 			else
 			{
-				retu = _putchar(*format);
-				return (retu);
+				_putchar(*format);
 			}
 		}
 
 		format++;
 	}
+	return (0);
 }
