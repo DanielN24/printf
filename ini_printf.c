@@ -22,38 +22,7 @@ int ini_printf(const char *format, va_list args)
 				return (retu);
 			}
 		}
-		else if (state == 1)
-		{
-			switch (*format)
-			{
-				case 'c':
-				{
-					char ch = va_arg(args, int);
 
-					retu = _putchar(ch);
-					return (retu);
-
-					break;
-				}
-				case 's':
-				{
-					break;
-				}
-				case 'd':
-				{
-					break;
-				}
-				case 'i':
-				{
-					break;
-				}
-				case '%':
-				{
-					break;
-				}
-				state = 0;
-			}
-		}
-		fortmat++;
+		format++;
 	}
 }
