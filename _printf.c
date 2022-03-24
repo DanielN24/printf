@@ -7,11 +7,11 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int retu;
+	int count = 0;
 
 	va_start(args, format);
 
-	retu = ini_printf(format, args);
+	count = ini_printf(format, args);
 
-	return (retu);
+	return (count);
 }
