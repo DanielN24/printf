@@ -6,14 +6,13 @@
  * Return: characters stored to output
  */
 
-int option_s(const char *format, va_list args)
+void option_s(const char *format, va_list args)
 {
 	if (*format == 's')
 	{
 		const char *s = va_arg(args, const char *);
+
 		while (*s)
-			_putchar(*s);
-		break;
+			_putchar(*s++);
 	}
-	return (0);
 }

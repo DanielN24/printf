@@ -20,7 +20,22 @@ int ini_printf(const char *format, va_list args)
 				_putchar(*format);
 			}
 		}
-		state = 0;
+		else if (state == 1)
+		{
+			switch (*format)
+			{
+				case 'c':
+					option_c(format, args);
+				break;
+				case 's':
+					option_s(format, args);
+				break;
+				case '%':
+					_putchar('%');
+				break;
+			}
+			state = 0;
+		}
 		format++;
 	}
 	return (0);

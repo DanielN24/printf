@@ -6,18 +6,12 @@
  * Return: characters stored to output
  */
 
-int option_c(const char *format, va_list args)
+void option_c(const char *format, va_list args)
 {
-	char ch = va_arg(args, int);
-	int retu = _putchar(ch);
-
 	if (*format == 'c')
 	{
+		char ch = va_arg(args, int);
+
 		_putchar(ch);
-		return (retu);
-
-		break;
-
 	}
-	return (0);
 }
