@@ -7,7 +7,7 @@
  */
 int ini_printf(const char *format, va_list args)
 {
-	int state = 0;
+	int state = 0, counter = 0;
 
 	while (*format)
 	{
@@ -26,9 +26,10 @@ int ini_printf(const char *format, va_list args)
 			{
 				case 'c':
 					option_c(format, args);
+					counter--;
 				break;
 				case 's':
-					option_s(format, args);
+					counter = counter + option_s(format, args);
 				break;
 				case '%':
 					_putchar('%');
@@ -36,7 +37,8 @@ int ini_printf(const char *format, va_list args)
 			}
 			state = 0;
 		}
+		counter++;
 		format++;
 	}
-	return (0);
+	return (counter);
 }
