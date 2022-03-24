@@ -12,7 +12,8 @@ int option_s(const char *format, va_list args)
 	{
 		const char *s = va_arg(args, const char *);
 		while (*s)
-			_putchar(str);
+			_putchar(*s);
 		break;
 	}
+	return (0);
 }

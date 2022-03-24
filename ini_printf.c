@@ -20,7 +20,7 @@ int ini_printf(const char *format, va_list args)
 				_putchar(*format);
 			}
 		}
-
+		state = 0;
 		format++;
 	}
 	return (0);
