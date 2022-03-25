@@ -15,7 +15,7 @@ int main(void)
    // void *addr;*/
 
     len = printf("%s", "This sentence is retrieved from va_args!\n");
-    len = _printf("%c", 'S');
+    len = _printf("%c\n", 'S');
     len = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
     len = _printf("%s", "This sentence is retrieved from va_args!\n");
     len = _printf("Let'see if the cast is correctly done: %c. Did it work?\n", 'F');
