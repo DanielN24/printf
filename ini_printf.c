@@ -18,6 +18,7 @@ int ini_printf(const char *format, va_list args)
 			{
 				case 'c':
 					option_c(format, args);
+					counter++;
 					format++;
 					break;
 				case 's':
