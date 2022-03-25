@@ -26,7 +26,7 @@ int ini_printf(const char *format, va_list args)
 					break;
 				case '%':
 					_putchar('%');
-					break
+					break;
 			}
 		}
 		else
@@ -35,5 +35,6 @@ int ini_printf(const char *format, va_list args)
 			counter++;
 			format++;
 		}
+	}
 	return (counter);
 }
