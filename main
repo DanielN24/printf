@@ -14,6 +14,11 @@ int main(void)
    // unsigned int ui;
    // void *addr;*/
 
+    len = printf("%s", "This sentence is retrieved from va_args!\n");
+    len = _printf("%c", 'S');
+    len = _printf("Complete the sentence: You %s nothing, Jon Snow.\n", "know");
+    len = _printf("%s", "This sentence is retrieved from va_args!\n");
+    len = _printf("Let'see if the cast is correctly done: %c. Did it work?\n", 'F');
     len = _printf("Let's try to printf a simple sentence.\n");
     /**len2 = printf("Let's try to printf a simple sentence.\n");
     //ui = (unsigned int)INT_MAX + 1024;
@@ -28,8 +33,8 @@ int main(void)
     //printf("Unsigned octal:[%o]\n", ui);
     //_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
     //printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);*/
-    printf("%d", _printf("Character:[%c]\n", 'H'));
-    printf("%d", printf("Character:[%c]\n", 'H'));
+    printf("%d", _printf("Character:[%c]\n", 35));
+    printf("%d", printf("Character:[%c]\n", 35));
     /**printf("Character:[%c]\n", 'H');*/
     printf("%d", _printf("String:[%s]\n", "I am a string !"));
     /**printf("String:[%s]\n", "I am a string !");

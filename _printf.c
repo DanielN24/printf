@@ -2,7 +2,7 @@
 /**
  *_printf - function that produces output according to a format
  *@format: info to print
- *Return: retu
+ *Return: count
  */
 int _printf(const char *format, ...)
 {

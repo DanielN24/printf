@@ -7,38 +7,33 @@
  */
 int ini_printf(const char *format, va_list args)
 {
-	int state = 0, counter = 0;
+	int counter = 0;
 
 	while (*format)
 	{
-		if (state == 0)
+		if (*format == '%')
 		{
-			if (*format == '%')
-				state = 1;
-			else
-			{
-				_putchar(*format);
-			}
-		}
-		else if (state == 1)
-		{
+			format++;
 			switch (*format)
 			{
 				case 'c':
 					option_c(format, args);
 					counter--;
-				break;
+					break;
 				case 's':
 					counter = counter + option_s(format, args);
-				break;
+					format++;
+					break;
 				case '%':
 					_putchar('%');
-				break;
+					break
 			}
-			state = 0;
 		}
-		counter++;
-		format++;
-	}
+		else
+		{
+			_putchar(*format);
+			counter++;
+			format++;
+		}
 	return (counter);
 }
