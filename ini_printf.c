@@ -3,7 +3,7 @@
  *ini_printf - function that produces output according to a format
  *@format: info to print
  *@args: info to print
- *Return: retu
+ *Return: counter
  */
 int ini_printf(const char *format, va_list args)
 {
@@ -18,7 +18,6 @@ int ini_printf(const char *format, va_list args)
 			{
 				case 'c':
 					option_c(format, args);
-					counter--;
 					format++;
 					break;
 				case 's':
