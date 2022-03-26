@@ -10,6 +10,8 @@ int ini_printf(const char *format, va_list args)
 	char buffer[2048];
 	int counter = 0;
 
+	if (!format)
+		return (-1);
 	while (*format)
 	{
 		if (*format == '%')
@@ -19,8 +21,7 @@ int ini_printf(const char *format, va_list args)
 			{
 				case 'c':
 					option_c(format, args, buffer, counter);
-					counter++;
-					format++;
+					counter++, format++;
 					break;
 				case 's':
 					counter = counter + option_s(format, args, buffer, counter);
@@ -28,14 +29,14 @@ int ini_printf(const char *format, va_list args)
 					break;
 				case '%':
 					buffer[counter] = '%';
-					format++;
-					counter++;
+					format++, counter++;
 					break;
+				case '':
+					return (-1);
 				default:
 					format--;
 					buffer[counter] = *format;
-					counter++;
-					format++;
+					counter++, format++;
 					break;
 			}
 		}
