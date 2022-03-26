@@ -30,6 +30,12 @@ int ini_printf(const char *format, va_list args)
 					counter++;
 					_putchar('%');
 					break;
+				default:
+					format--;
+					counter++;
+					_putchar(*format);
+					format++;
+					break;
 			}
 		}
 		else
