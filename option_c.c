@@ -6,12 +6,10 @@
  * Return: characters stored to output
  */
 
-void option_c(const char *format, va_list args)
+void option_c(const char *format, va_list args, char *buffer, int counter)
 {
-	if (*format == 'c')
-	{
-		char ch = va_arg(args, int);
+	char ch = va_arg(args, int);
 
-		_putchar(ch);
-	}
+	if (*format == 'c')
+		buffer[counter] = ch;
 }

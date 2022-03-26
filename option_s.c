@@ -6,22 +6,21 @@
  * Return: characters stored to output
  */
 
-int option_s(const char *format, va_list args)
+int option_s(const char *format, va_list args, char *buffer, int counter)
 {
-	int counter = 0;
+	int i = 0;
+	const char *s = va_arg(args, const char *);
 
 	if (*format == 's')
 	{
-		const char *s = va_arg(args, const char *);
-
 		if (!s)
 			s = "(null)";
 
 		while (s && *s)
 		{
-			_putchar(*s++);
-			counter++;
+			buffer[counter] = *s++;
+			counter++, i++;
 		}
 	}
-	return (counter);
+	return (i);
 }

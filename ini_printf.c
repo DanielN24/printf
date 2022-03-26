@@ -7,6 +7,7 @@
  */
 int ini_printf(const char *format, va_list args)
 {
+	char buffer[2048];
 	int counter = 0;
 
 	while (*format)
@@ -17,33 +18,34 @@ int ini_printf(const char *format, va_list args)
 			switch (*format)
 			{
 				case 'c':
-					option_c(format, args);
+					option_c(format, args, buffer, counter);
 					counter++;
 					format++;
 					break;
 				case 's':
-					counter = counter + option_s(format, args);
+					counter = counter + option_s(format, args, buffer, counter);
 					format++;
 					break;
 				case '%':
+					buffer[counter] = '%';
 					format++;
 					counter++;
-					_putchar('%');
 					break;
 				default:
 					format--;
+					buffer[counter] = *format;
 					counter++;
-					_putchar(*format);
 					format++;
 					break;
 			}
 		}
 		else
 		{
-			_putchar(*format);
+			buffer[counter] = *format;
 			counter++;
 			format++;
 		}
 	}
+	write(1, buffer, counter);
 	return (counter);
 }

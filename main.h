@@ -11,8 +11,8 @@
 int ini_printf(const char *format, va_list args);
 int _printf(const char *format, ...);
 int _putchar(char c);
-void option_c(const char *format, va_list args);
+void option_c(const char *format, va_list args, char *buffer, int counter);
 void testing(char *string);
-int option_s(const char *format, va_list args);
+int option_s(const char *format, va_list args, char *buffer, int counter);
 
 #endif
