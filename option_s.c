@@ -13,8 +13,10 @@ int option_s(const char *format, va_list args)
 	if (*format == 's')
 	{
 		const char *s = va_arg(args, const char *);
+
 		if (!s)
 			s = "(null)";
+
 		while (s && *s)
 		{
 			_putchar(*s++);
