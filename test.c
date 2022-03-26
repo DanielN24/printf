@@ -1,11 +1,13 @@
 #include "main.h"
 
+/**
+ * testing - function to prove the ini function
+ * @string: string to prove diference
+ */
 
-
-
-void testing(char * string)
+void testing(char *string)
 {
-	int len = 0, len2 = 0; 
+	int len = 0, len2 = 0;
 
 
 	printf("printf original:\n[");
@@ -16,6 +18,17 @@ void testing(char * string)
 
 	if (len != len2)
 		printf("Are diferents: %d != _%d", len, len2);
+}
+
+/**
+ * main - prove the testing funcion
+ * Return: an integer
+ */
+
+int main(void)
+{
+	testing("%%Jesusesfeo");
+	return (0);
 }
 
 
