@@ -12,7 +12,7 @@ int ini_printf(const char *format, va_list args)
 
 	if (!format)
 		return (-1);
-	
+
 	while (*format)
 	{
 		if (*format == '%')
@@ -37,7 +37,7 @@ int ini_printf(const char *format, va_list args)
 				case 'd':
 					;
 				case 'i':
-					;	
+					;
 				default:
 					format--;
 					buffer[counter] = *format;
