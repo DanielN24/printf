@@ -10,7 +10,7 @@ int ini_printf(const char *format, va_list args)
 	char buffer[2048];
 	int counter = 0;
 
-	if (!format || '\0')
+	if (!format)
 		return (-1);
 	while (*format)
 	{
@@ -31,13 +31,14 @@ int ini_printf(const char *format, va_list args)
 					buffer[counter] = '%';
 					format++, counter++;
 					break;
+				case '\0':
+					return (-1);
 				default:
 					format--;
 					buffer[counter] = *format;
 					counter++, format++;
 			}
-		}
-		else
+		} else
 		{
 			buffer[counter] = *format;
 			counter++, format++;
