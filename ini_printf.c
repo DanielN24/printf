@@ -47,3 +47,20 @@ int ini_printf(const char *format, va_list args)
 	write(1, buffer, counter);
 	return (counter);
 }
+/**
+*_printf_int - function that produces output according to a format
+*@di: info to print
+*Return: a
+*/
+char *_printf_int(int di)
+{
+	char *a;
+
+	a = malloc(sizeof(char) * 4);
+	if (a == NULL)
+		return (0);
+	a[0] = (di / 100) + '0';
+	a[1] = ((di - ((di / 100 * 100)) / 10) + '0');
+	a[2] = ((di % 10) + '0');
+	return (a);
+}
