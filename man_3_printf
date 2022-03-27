@@ -1,0 +1,52 @@
+.\" manpage for _printf
+.\" Contact 44560holbertonschool.com or 4563@holbertonschool.com to correct errors
+.TH "_PRINTF" "1" "March 2022" "_printf 1.0"
+
+.SH NAME
+_printf \- sends a formatted string to the standard output.
+
+.SH SYNOPSIS
+int _printf (const char *format, ...);
+
+.SH DESCRIPTION
+.B _printf
+prints a formatted string to the standard output.
+It is a handy way to produce precisely-formatted output from numerical or textual arguments.
+
+.SH OPTIONS
+use a '%' then a conversion specifier.
+
+.SH specifier optios.
+.TP
+.B d
+When used with _printf functions, Take the next argument and print it as a decimal.
+.TP
+.B i
+When used with _printf functions, Take the next argument and print it as a integer.
+.TP
+.B s
+When used with _printf functions, Take the next argument and print it as a string.
+.TP
+.B c
+When used with _printf functions, specifies a single-byte character.
+.TP
+.B %
+when a '%' is written.  No argument is converted.
+
+.SH EXAMPLES
+.nf
+{
+	_printf("%c\n", 65);
+}
+output: A
+.nf
+{
+	char string[] = "Holberton School";
+
+	_printf("%s\n" string);
+}
+output: Holberton School
+
+.SH AUTHORS
+.B Jesús Junco
+.B Daniel Novoa
