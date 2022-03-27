@@ -32,6 +32,10 @@ int ini_printf(const char *format, va_list args)
 					break;
 				case '\0':
 					return (-1);
+				case 'd':
+					;
+				case 'i':
+					;	
 				default:
 					format--;
 					buffer[counter] = *format;

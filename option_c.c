@@ -3,6 +3,8 @@
  * option_c - Evaluates the format c for _printf
  * @format: Characters
  * @args: A va_lis
+ * @buffer: is the space to locate all the string
+ * @counter: the counter of original function to count the string
  * Return: characters stored to output
  */
 
