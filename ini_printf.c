@@ -10,6 +10,8 @@ int ini_printf(const char *format, va_list args)
 	char buffer[2048];
 	int counter = 0;
 
+	if (!format)
+		return (-1);
 	
 	while (*format)
 	{
