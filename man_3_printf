@@ -34,19 +34,23 @@ When used with _printf functions, specifies a single-byte character.
 when a '%' is written.  No argument is converted.
 
 .SH EXAMPLES
+
+.B print a character.
 .nf
 {
-	_printf("%c\n", 65);
+	_printf("%c", 65);
 }
 output: A
+
+.B print a string.
 .nf
 {
 	char string[] = "Holberton School";
 
-	_printf("%s\n" string);
+	_printf("%s" string);
 }
 output: Holberton School
 
 .SH AUTHORS
-.B Jesús Junco
+.B Jesús Junco,
 .B Daniel Novoa
