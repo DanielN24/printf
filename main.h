@@ -14,8 +14,11 @@ int _putchar(char c);
 void option_c(const char *format, va_list args, char *buffer, int counter);
 void testing(char *string);
 int option_s(const char *format, va_list args, char *buffer, int counter);
-char *_printf_i(int di);
-char *_printf_d(int di);
 void d_i_printf(char *a);
+int print_d(va_list d);
+int print_i(va_list i);
+void unsignde_number_to_string(int number, int base, char *buffer);
+int ini_printf_di(const char *format, va_list args);
+void number_to_string(int number, int base, char *buffer);
 
 #endif
